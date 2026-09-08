@@ -239,9 +239,7 @@ export const useCsvUpload = ({
       try {
         await editSession.end(save);
       } finally {
-        if (sessionDataSource.status !== "unsubscribed") {
-          sessionDataSource.unsubscribe();
-        }
+        sessionDataSource.unsubscribe();
         setActiveSessionDataSource(undefined);
       }
 
