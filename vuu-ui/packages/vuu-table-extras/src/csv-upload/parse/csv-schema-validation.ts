@@ -159,7 +159,7 @@ export const validateCsvAgainstSchema = (
       const rawValue = rowValues[columnIndex] ?? "";
       const schemaColumn = schemaColumns.get(columnName);
       const schemaType = schemaColumn?.serverDataType;
-      const isRequired = schemaColumn?.required === true;
+      const isRequired = schemaColumn?.required !== false;
 
       if (rawValue.length === 0) {
         if (isRequired) {
